@@ -47,6 +47,22 @@ section#login {
         height: 500px;
         border-radius: 20px;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.452);
+
+        transition: width .3s, height .3s;
+        transition-timing-function: ease;
+        /*
+        🔸 O transition-timing-function
+
+        Esse cara define a aceleração da animação.
+
+        ease (padrão) → começa devagar, acelera no meio, e desacelera no final.
+
+        Outros valores comuns:
+        linear → velocidade constante.
+        ease-in → começa devagar e acelera.
+        ease-out → começa rápido e desacelera.
+        ease-in-out → lento no início e no fim.
+        */
 }
 
 section#login > div#imagem {
