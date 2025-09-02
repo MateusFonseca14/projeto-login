@@ -29,7 +29,6 @@ section#login {
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
         overflow: hidden;
         /* 
         A propriedade overflow em CSS define como o conteúdo que ultrapassa a área de um elemento deve se comportar.
@@ -48,6 +47,7 @@ section#login {
         border-radius: 20px;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.452);
 
+        transform: translate(-50%, -50%);
         transition: width .3s, height .3s;
         transition-timing-function: ease;
         /*
@@ -90,15 +90,61 @@ div#formulario > p {
 
 form > div.campo {
         background-color: #5f2c82;
+        border: 2px solid #5f2c82;
         display: block;
         width: 100%;
         height: 40px;
-        border-radius: 5px;
+        border-radius: 8px;
         margin: 5px 0px;
 }
 
 div.campo > label {
         display: none;
+}
+
+div.campo > span {
+        color: white;
+        /*background-color: black;*/
+        font-size: 2em;
+        width: 40px;
+        padding: 5px;
+}
+
+div.campo > input {
+        background-color: #60c7c3;
+        font-size: 1em;
+        width: calc(100% - 44.5px);
+        /*
+        🔹 O que é calc()?
+
+        A função calc() permite misturar unidades diferentes (%, px, em, vh, etc.) para calcular valores de propriedades CSS.
+        Ela faz a conta na hora de renderizar a página.
+
+        👉 Resumindo:
+        calc(100% - 44.5px) é útil quando você precisa combinar proporção (%) com medida fixa (px), e não dá para resolver só com % ou só com px.
+        */
+        height: 100%;
+        border: 0px;
+        border-radius: 8px;
+        padding: 5px;
+        transform: translateY(-13px);/* Sempre que tiver uma animação/transformação para fazer ele como última linha do seletor */
+}
+
+div.campo > input:focus-within {
+        background-color: white;
+        /*
+        🔸 Mas tem um detalhe:
+
+        O :focus-within é usado geralmente em elementos container (ex.: div, form).
+
+        Ele ativa o estilo quando qualquer filho dentro desse container está em foco.
+
+        👉 Resumindo:
+
+        Se você quer mudar a cor do próprio input em foco, use input:focus.
+
+        Se você quer mudar a cor do container quando algum filho está em foco, use .campo:focus-within.
+        */
 }
 
 form > input[type=submit] {
